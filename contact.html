@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Me - Mohammad Ahmed Suleiman Alebraheem</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="contact.html">Contact Me</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Contact Me</h1>
+    <p>I'd love to hear from you!</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Send Me a Message</h2>
+      <form id="contactForm" onsubmit="return validateForm()">
+
+        <div>
+          <label for="fullName">Full Name</label><br>
+          <input type="text" id="fullName" name="fullName">
+        </div>
+
+        <div>
+          <label for="email">Email Address</label><br>
+          <input type="email" id="email" name="email">
+        </div>
+
+        <div>
+          <label for="country">Country</label><br>
+          <input type="text" id="country" name="country">
+        </div>
+
+        <div>
+          <label for="comments">Comments</label><br>
+          <textarea id="comments" name="comments"></textarea>
+        </div>
+
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2026 Mohammad Ahmed Suleiman Alebraheem. All rights reserved.
+  </footer>
+
+  <script>
+    function validateForm() {
+      const fullName = document.getElementById("fullName").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const country = document.getElementById("country").value.trim();
+      const comments = document.getElementById("comments").value.trim();
+
+      if (fullName === "" || email === "" || country === "" || comments === "") {
+        alert("Please fill in all fields before submitting.");
+        return false; // stop form submission
+      }
+
+      alert("Thank you, " + fullName + "! Your message has been submitted successfully.");
+      return false; // prevent actual page reload since there is no backend
+    }
+  </script>
+
+</body>
+</html>
